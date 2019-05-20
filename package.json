@@ -11,7 +11,9 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "atob": "^2.1.2",
     "cross-env": "^5.2.0",
+    "js-cookie": "^2.2.0",
     "nuxt": "^2.4.0"
   },
   "devDependencies": {

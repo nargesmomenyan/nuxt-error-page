@@ -1,4 +1,6 @@
 import pkg from './package'
+import { permission } from "./components/directives/PermissionDirective";
+
 
 export default {
   mode: 'universal',
@@ -15,7 +17,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {      rel:"stylesheet", href:"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"}
+      { rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" }
     ]
   },
 
@@ -35,6 +37,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+
   ],
 
   /*
@@ -42,6 +45,14 @@ export default {
   */
   modules: [
   ],
+
+  render:{
+    bundleRenderer: {
+      directives: {
+        permission
+      }
+    }
+  },
 
   /*
   ** Build configuration
@@ -51,6 +62,11 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-    }
+    },
+    // ssr: {
+    //   directives: {
+    //     //permission
+    //   }
+    // }
   }
 }
